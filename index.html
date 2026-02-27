@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Untuk Kamu 🌸</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ Custom cursor ══ -->
+<div class="cursor" id="cursor"></div>
+
+<!-- ══ Toast notification ══ -->
+<div class="toast" id="toast">💌 Terkirim!</div>
+
+<!-- ══════════════════════════════════
+     HIDDEN SVG TEMPLATES (for bouquet)
+     ══════════════════════════════════ -->
+<svg style="display:none">
+  <!-- Rose -->
+  <g id="svg-rose">
+    <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="rg1" cx="50%" cy="50%"><stop offset="0%" stop-color="#ffaab8"/><stop offset="100%" stop-color="#e8637a"/></radialGradient>
+        <radialGradient id="rg2" cx="50%" cy="50%"><stop offset="0%" stop-color="#ff7a8a"/><stop offset="100%" stop-color="#c9374f"/></radialGradient>
+      </defs>
+      <line x1="36" y1="72" x2="36" y2="40" stroke="#5a8a5a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M36 58 Q26 50 18 54 Q26 64 36 58Z" fill="#6da86d"/>
+      <ellipse cx="36" cy="36" rx="12" ry="8"  fill="url(#rg1)"/>
+      <ellipse cx="36" cy="36" rx="8"  ry="12" fill="url(#rg1)"/>
+      <ellipse cx="27" cy="31" rx="9"  ry="6"  fill="url(#rg2)"/>
+      <ellipse cx="45" cy="31" rx="9"  ry="6"  fill="url(#rg2)"/>
+      <ellipse cx="36" cy="25" rx="8"  ry="6"  fill="#f4a7b5"/>
+      <circle  cx="36" cy="35" r="6"   fill="#c9976a"/>
+      <circle  cx="36" cy="35" r="3.5" fill="#e8c08a"/>
+    </svg>
+  </g>
+
+  <!-- Sakura -->
+  <g id="svg-sakura">
+    <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sg1" cx="50%" cy="50%"><stop offset="0%" stop-color="#ffd6e7"/><stop offset="100%" stop-color="#f4a7b5"/></radialGradient>
+      </defs>
+      <line x1="36" y1="72" x2="36" y2="42" stroke="#5a8a5a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M36 58 Q28 50 20 54 Q28 62 36 58Z" fill="#6da86d"/>
+      <!-- 5 petals -->
+      <ellipse cx="36" cy="26" rx="7" ry="13" fill="url(#sg1)"/>
+      <ellipse cx="36" cy="26" rx="7" ry="13" fill="url(#sg1)" transform="rotate(72 36 36)"/>
+      <ellipse cx="36" cy="26" rx="7" ry="13" fill="url(#sg1)" transform="rotate(144 36 36)"/>
+      <ellipse cx="36" cy="26" rx="7" ry="13" fill="url(#sg1)" transform="rotate(216 36 36)"/>
+      <ellipse cx="36" cy="26" rx="7" ry="13" fill="url(#sg1)" transform="rotate(288 36 36)"/>
+      <circle cx="36" cy="36" r="7"   fill="#fff0f5"/>
+      <circle cx="36" cy="36" r="4"   fill="#ffcce0"/>
+      <circle cx="34" cy="34" r="1.2" fill="#e8637a"/>
+      <circle cx="38" cy="34" r="1.2" fill="#e8637a"/>
+      <circle cx="36" cy="38" r="1.2" fill="#e8637a"/>
+    </svg>
+  </g>
+
+  <!-- Sunflower -->
+  <g id="svg-sun">
+    <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="ung1" cx="50%" cy="40%"><stop offset="0%" stop-color="#ffe066"/><stop offset="100%" stop-color="#f4a830"/></radialGradient>
+      </defs>
+      <line x1="36" y1="72" x2="36" y2="42" stroke="#5a8a5a" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M36 60 Q24 50 16 56 Q26 66 36 60Z" fill="#6da86d"/>
+      <path d="M36 60 Q48 50 56 56 Q46 66 36 60Z" fill="#6da86d"/>
+      <g transform="translate(36,32)">
+        <ellipse rx="6" ry="15" fill="url(#ung1)"/>
+        <ellipse rx="6" ry="15" fill="url(#ung1)" transform="rotate(30)"/>
+        <ellipse rx="6" ry="15" fill="url(#ung1)" transform="rotate(60)"/>
+        <ellipse rx="6" ry="15" fill="url(#ung1)" transform="rotate(90)"/>
+        <ellipse rx="6" ry="15" fill="url(#ung1)" transform="rotate(120)"/>
+        <ellipse rx="6" ry="15" fill="url(#ung1)" transform="rotate(150)"/>
+        <ellipse rx="6" ry="15" fill="url(#ung1)" transform="rotate(180)"/>
+        <ellipse rx="6" ry="15" fill="url(#ung1)" transform="rotate(210)"/>
+        <ellipse rx="6" ry="15" fill="url(#ung1)" transform="rotate(240)"/>
+        <ellipse rx="6" ry="15" fill="url(#ung1)" transform="rotate(270)"/>
+        <ellipse rx="6" ry="15" fill="url(#ung1)" transform="rotate(300)"/>
+        <ellipse rx="6" ry="15" fill="url(#ung1)" transform="rotate(330)"/>
+      </g>
+      <circle cx="36" cy="32" r="12" fill="#5a2d10"/>
+      <circle cx="36" cy="32" r="8"  fill="#7a3d1a"/>
+      <circle cx="33" cy="30" r="1.5" fill="#c9976a"/>
+      <circle cx="39" cy="30" r="1.5" fill="#c9976a"/>
+      <circle cx="36" cy="35" r="1.5" fill="#c9976a"/>
+    </svg>
+  </g>
+
+  <!-- Tulip -->
+  <g id="svg-tulip">
+    <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="tg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff9aaa"/><stop offset="100%" stop-color="#e8637a"/></linearGradient>
+        <linearGradient id="tg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ffccd5"/><stop offset="100%" stop-color="#ff9aaa"/></linearGradient>
+      </defs>
+      <line x1="36" y1="72" x2="36" y2="44" stroke="#5a8a5a" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M36 62 Q46 52 54 57 Q44 67 36 62Z" fill="#6da86d"/>
+      <path d="M36 62 Q26 52 18 57 Q28 67 36 62Z" fill="#6da86d"/>
+      <!-- tulip cup -->
+      <path d="M36 44 Q22 38 20 24 Q28 12 36 10 Q44 12 52 24 Q50 38 36 44Z" fill="url(#tg1)"/>
+      <path d="M24 30 Q22 20 30 13 Q32 32 24 30Z" fill="url(#tg2)"/>
+      <path d="M48 30 Q50 20 42 13 Q40 32 48 30Z" fill="url(#tg2)"/>
+      <path d="M36 44 Q36 30 36 16" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+  </g>
+
+  <!-- Lavender -->
+  <g id="svg-lavender">
+    <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4b8e0"/><stop offset="100%" stop-color="#9b72cc"/></linearGradient>
+      </defs>
+      <line x1="36" y1="72" x2="36" y2="30" stroke="#5a8a5a" stroke-width="3" stroke-linecap="round"/>
+      <!-- Lavender spike -->
+      <ellipse cx="36" cy="54" rx="5" ry="4" fill="#c8a8d4"/>
+      <ellipse cx="29" cy="48" rx="5" ry="4" fill="#c8a8d4"/>
+      <ellipse cx="43" cy="48" rx="5" ry="4" fill="#b893c8"/>
+      <ellipse cx="33" cy="41" rx="5" ry="4" fill="url(#lg1)"/>
+      <ellipse cx="39" cy="41" rx="5" ry="4" fill="url(#lg1)"/>
+      <ellipse cx="30" cy="34" rx="5" ry="4" fill="url(#lg1)"/>
+      <ellipse cx="42" cy="34" rx="5" ry="4" fill="#9b72cc"/>
+      <ellipse cx="36" cy="27" rx="5" ry="4" fill="#7a52aa"/>
+      <ellipse cx="36" cy="20" rx="4" ry="3" fill="#6b2d9e"/>
+      <!-- leaves -->
+      <path d="M36 50 Q28 46 24 50 Q30 56 36 50Z" fill="#6da86d"/>
+      <path d="M36 50 Q44 46 48 50 Q42 56 36 50Z" fill="#5a8a5a"/>
+    </svg>
+  </g>
+
+  <!-- Daisy -->
+  <g id="svg-daisy">
+    <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <line x1="36" y1="72" x2="36" y2="42" stroke="#5a8a5a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M36 58 Q26 50 18 54 Q26 64 36 58Z" fill="#6da86d"/>
+      <!-- 12 white petals -->
+      <g transform="translate(36,32)">
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95"/>
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95" transform="rotate(30)"/>
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95" transform="rotate(60)"/>
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95" transform="rotate(90)"/>
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95" transform="rotate(120)"/>
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95" transform="rotate(150)"/>
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95" transform="rotate(180)"/>
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95" transform="rotate(210)"/>
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95" transform="rotate(240)"/>
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95" transform="rotate(270)"/>
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95" transform="rotate(300)"/>
+        <ellipse rx="5" ry="13" fill="white" opacity="0.95" transform="rotate(330)"/>
+      </g>
+      <circle cx="36" cy="32" r="10" fill="#f4c842"/>
+      <circle cx="36" cy="32" r="6"  fill="#e0a820"/>
+      <circle cx="33" cy="30" r="1.5" fill="#c98010"/>
+      <circle cx="39" cy="30" r="1.5" fill="#c98010"/>
+      <circle cx="36" cy="35" r="1.5" fill="#c98010"/>
+    </svg>
+  </g>
+
+  <!-- Hibiscus -->
+  <g id="svg-hibiscus">
+    <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="hg1" cx="30%" cy="30%"><stop offset="0%" stop-color="#ff8c69"/><stop offset="100%" stop-color="#c2185b"/></radialGradient>
+      </defs>
+      <line x1="36" y1="72" x2="36" y2="44" stroke="#5a8a5a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M36 60 Q24 52 18 58 Q26 66 36 60Z" fill="#6da86d"/>
+      <!-- 5 ruffled petals -->
+      <path d="M36 36 Q20 28 14 12 Q24 18 36 24Z" fill="url(#hg1)" opacity="0.9"/>
+      <path d="M36 36 Q52 28 58 12 Q48 18 36 24Z" fill="url(#hg1)" opacity="0.9"/>
+      <path d="M36 36 Q14 40 8 56 Q20 50 30 46Z" fill="url(#hg1)" opacity="0.9"/>
+      <path d="M36 36 Q58 40 64 56 Q52 50 42 46Z" fill="url(#hg1)" opacity="0.9"/>
+      <path d="M36 36 Q36 14 36 4 Q32 20 36 32Z" fill="url(#hg1)" opacity="0.9"/>
+      <!-- stamen -->
+      <line x1="36" y1="36" x2="36" y2="20" stroke="#ffd700" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="36" cy="18" r="3" fill="#f4c842"/>
+      <circle cx="36" cy="36" r="6" fill="#8B0032"/>
+      <circle cx="36" cy="36" r="3.5" fill="#c2185b"/>
+    </svg>
+  </g>
+
+  <!-- Lotus -->
+  <g id="svg-lotus">
+    <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lotg" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#f48fb1"/><stop offset="100%" stop-color="#fce4ec"/></linearGradient>
+      </defs>
+      <line x1="36" y1="72" x2="36" y2="48" stroke="#5a8a5a" stroke-width="3" stroke-linecap="round"/>
+      <!-- water leaves -->
+      <ellipse cx="20" cy="58" rx="18" ry="6" fill="#5a9a5a" opacity="0.7" transform="rotate(-10 20 58)"/>
+      <ellipse cx="52" cy="58" rx="18" ry="6" fill="#4a8a4a" opacity="0.7" transform="rotate(10 52 58)"/>
+      <!-- outer petals -->
+      <path d="M36 48 Q18 42 16 26 Q28 34 36 40Z" fill="url(#lotg)" opacity="0.85"/>
+      <path d="M36 48 Q54 42 56 26 Q44 34 36 40Z" fill="url(#lotg)" opacity="0.85"/>
+      <path d="M36 48 Q12 50 10 38 Q24 40 36 44Z" fill="#f8bbd0" opacity="0.85"/>
+      <path d="M36 48 Q60 50 62 38 Q48 40 36 44Z" fill="#f8bbd0" opacity="0.85"/>
+      <!-- inner petals -->
+      <path d="M36 48 Q24 38 26 24 Q32 34 36 42Z" fill="#fce4ec"/>
+      <path d="M36 48 Q48 38 46 24 Q40 34 36 42Z" fill="#fce4ec"/>
+      <path d="M36 48 Q36 28 36 16 Q33 32 36 44Z" fill="white" opacity="0.9"/>
+      <!-- center -->
+      <ellipse cx="36" cy="42" rx="6" ry="4" fill="#f9a825"/>
+      <circle  cx="36" cy="42" r="3"         fill="#f57f17"/>
+    </svg>
+  </g>
+</svg>
+
+<!-- ══════════════════════════════════
+     HERO SECTION
+     ══════════════════════════════════ -->
+<section class="hero">
+  <div class="garden" id="garden">
+    <!-- Butterflies -->
+    <div class="butterfly" style="top:10%;left:70%;animation-duration:7s;">🦋</div>
+    <div class="butterfly" style="top:30%;left:15%;animation-duration:9s;animation-delay:-3s;">🦋</div>
+
+    <!-- Flower 1 — Rose -->
+    <svg class="flower-svg flower-1" width="80" height="120" viewBox="0 0 80 120" onclick="bloomFlower(this)">
+      <line x1="40" y1="120" x2="40" y2="55" stroke="#5a8a5a" stroke-width="4" stroke-linecap="round"/>
+      <path d="M40 80 Q30 70 20 75 Q30 90 40 80Z" fill="#6da86d"/>
+      <ellipse cx="40" cy="55" rx="14" ry="10" fill="#e8637a" class="petal-path"/>
+      <ellipse cx="40" cy="55" rx="10" ry="14" fill="#f07a8a" class="petal-path"/>
+      <ellipse cx="30" cy="50" rx="10" ry="7"  fill="#e8637a" class="petal-path"/>
+      <ellipse cx="50" cy="50" rx="10" ry="7"  fill="#e8637a" class="petal-path"/>
+      <ellipse cx="40" cy="42" rx="9"  ry="7"  fill="#f4a7b5" class="petal-path"/>
+      <circle  cx="40" cy="52" r="7"   fill="#c9976a"/>
+      <circle  cx="40" cy="52" r="4"   fill="#e8b88a"/>
+    </svg>
+
+    <!-- Flower 2 — Pink Big -->
+    <svg class="flower-svg flower-2" width="100" height="150" viewBox="0 0 100 150" onclick="bloomFlower(this)">
+      <line x1="50" y1="150" x2="50" y2="70" stroke="#5a8a5a" stroke-width="5" stroke-linecap="round"/>
+      <path d="M50 110 Q35 95 25 100 Q38 115 50 110Z" fill="#6da86d"/>
+      <path d="M50 100 Q65 85 75 90 Q62 105 50 100Z" fill="#6da86d"/>
+      <ellipse cx="50" cy="60" rx="16" ry="25" fill="#ff8fa3" class="petal-path"/>
+      <ellipse cx="50" cy="60" rx="25" ry="16" fill="#ff8fa3" class="petal-path"/>
+      <ellipse cx="33" cy="50" rx="14" ry="22" fill="#e8637a" transform="rotate(-45 33 50)" class="petal-path"/>
+      <ellipse cx="67" cy="50" rx="14" ry="22" fill="#e8637a" transform="rotate(45 67 50)"  class="petal-path"/>
+      <ellipse cx="33" cy="70" rx="14" ry="22" fill="#e8637a" transform="rotate(45 33 70)"  class="petal-path"/>
+      <ellipse cx="67" cy="70" rx="14" ry="22" fill="#e8637a" transform="rotate(-45 67 70)" class="petal-path"/>
+      <circle  cx="50" cy="60" r="12" fill="#c9976a"/>
+      <circle  cx="50" cy="60" r="7"  fill="#e8b88a"/>
+      <circle  cx="47" cy="58" r="2"  fill="#6b2d3e"/>
+      <circle  cx="53" cy="58" r="2"  fill="#6b2d3e"/>
+      <circle  cx="50" cy="63" r="2"  fill="#6b2d3e"/>
+    </svg>
+
+    <!-- Flower 3 — Lavender -->
+    <svg class="flower-svg flower-3" width="70" height="110" viewBox="0 0 70 110" onclick="bloomFlower(this)">
+      <line x1="35" y1="110" x2="35" y2="50" stroke="#5a8a5a" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M35 80 Q22 68 12 73 Q24 85 35 80Z" fill="#6da86d"/>
+      <ellipse cx="35" cy="40" rx="12" ry="9"  fill="#c8a8d4" class="petal-path"/>
+      <ellipse cx="35" cy="40" rx="9"  ry="12" fill="#c8a8d4" class="petal-path"/>
+      <ellipse cx="25" cy="36" rx="9"  ry="6"  fill="#b893c8" class="petal-path"/>
+      <ellipse cx="45" cy="36" rx="9"  ry="6"  fill="#b893c8" class="petal-path"/>
+      <ellipse cx="35" cy="30" rx="8"  ry="6"  fill="#d4b8e0" class="petal-path"/>
+      <circle  cx="35" cy="40" r="6"   fill="#c9976a"/>
+    </svg>
+
+    <!-- Flower 4 — Daisy -->
+    <svg class="flower-svg flower-4" width="65" height="100" viewBox="0 0 65 100" onclick="bloomFlower(this)">
+      <line x1="32" y1="100" x2="32" y2="45" stroke="#5a8a5a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M32 75 Q20 65 12 69 Q22 80 32 75Z" fill="#6da86d"/>
+      <ellipse cx="32" cy="32" rx="7"  ry="14" fill="white" class="petal-path"/>
+      <ellipse cx="32" cy="32" rx="14" ry="7"  fill="white" class="petal-path"/>
+      <ellipse cx="32" cy="32" rx="10" ry="14" fill="white" transform="rotate(45 32 32)"  class="petal-path"/>
+      <ellipse cx="32" cy="32" rx="14" ry="10" fill="white" transform="rotate(-45 32 32)" class="petal-path"/>
+      <circle  cx="32" cy="32" r="9"  fill="#f4c842"/>
+      <circle  cx="32" cy="32" r="5"  fill="#e0a820"/>
+    </svg>
+
+    <!-- Flower 5 — Tulip -->
+    <svg class="flower-svg flower-5" width="65" height="105" viewBox="0 0 65 105" onclick="bloomFlower(this)">
+      <line x1="32" y1="105" x2="32" y2="52" stroke="#5a8a5a" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M32 80 Q44 68 52 73 Q42 84 32 80Z" fill="#6da86d"/>
+      <path d="M32 52 Q20 45 18 32 Q25 20 32 18 Q39 20 46 32 Q44 45 32 52Z" fill="#ff7a8a" class="petal-path"/>
+      <path d="M22 38 Q20 30 28 22 Q30 40 22 38Z" fill="#ffaab5" class="petal-path"/>
+      <path d="M42 38 Q44 30 36 22 Q34 40 42 38Z" fill="#ffaab5" class="petal-path"/>
+    </svg>
+
+    <!-- Flower 6 — Sunflower -->
+    <svg class="flower-svg flower-6" width="90" height="130" viewBox="0 0 90 130" onclick="bloomFlower(this)">
+      <line x1="45" y1="130" x2="45" y2="65" stroke="#5a8a5a" stroke-width="4" stroke-linecap="round"/>
+      <path d="M45 100 Q30 85 20 92 Q33 105 45 100Z" fill="#6da86d"/>
+      <path d="M45 95  Q60 80 70 87 Q57 100 45 95Z"  fill="#6da86d"/>
+      <g transform="translate(45,55)">
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path"/>
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path" transform="rotate(30)"/>
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path" transform="rotate(60)"/>
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path" transform="rotate(90)"/>
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path" transform="rotate(120)"/>
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path" transform="rotate(150)"/>
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path" transform="rotate(180)"/>
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path" transform="rotate(210)"/>
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path" transform="rotate(240)"/>
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path" transform="rotate(270)"/>
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path" transform="rotate(300)"/>
+        <ellipse rx="7" ry="18" fill="#f4a830" class="petal-path" transform="rotate(330)"/>
+      </g>
+      <circle cx="45" cy="55" r="15" fill="#6b2d3e"/>
+      <circle cx="45" cy="55" r="9"  fill="#8b4a5a"/>
+      <circle cx="41" cy="52" r="2"  fill="#c9976a"/>
+      <circle cx="49" cy="52" r="2"  fill="#c9976a"/>
+      <circle cx="45" cy="59" r="2"  fill="#c9976a"/>
+    </svg>
+  </div>
+
+  <div class="hero-text">
+    <h1 class="hero-title">for you ,<br>from me raja</h1>
+    <p class="hero-subtitle">✨ Klik bunga untuk membuatnya mekar ✨</p>
+    <button class="heart-btn" onclick="sendLove()">💕 awawaw</button>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MESSAGE SECTION
+     ══════════════════════════════════ -->
+<section class="message-section">
+  <div class="message-title reveal">kata kata hari ini</div>
+  <div class="message-card reveal">
+    <p>"Aku nggak butuh Google, soalnya semua yang aku cari ada di kamu… kecuali saldo rekening sih, itu tetap harus kerja."</p>
+  </div>
+  <div class="message-card reveal" style="transition-delay: 0.2s">
+    <p>"Aku nggak perlu peta… soalnya setiap jalan akhirnya tetap ke kamu.🌹"</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     BOUQUET SECTION
+     ══════════════════════════════════ -->
+<section class="bouquet-section">
+  <h2 class="reveal">Buat Buket Untukmu 💐</h2>
+  <p class="reveal">Pilih bunga favoritmu — klik untuk menambahkan ke buket</p>
+
+  <!-- ── Flower selection cards ── -->
+  <div class="flower-picker reveal">
+
+    <div class="flower-card" id="card-rose" onclick="addFlower('rose')">
+      <div class="card-glow"></div>
+      <div class="card-svg-wrap">
+        <svg viewBox="0 0 72 72"><use href="#svg-rose"/></svg>
+      </div>
+      <span class="card-name">Mawar</span>
+      <span class="card-count" id="count-rose"></span>
+    </div>
+
+    <div class="flower-card" id="card-sakura" onclick="addFlower('sakura')">
+      <div class="card-glow"></div>
+      <div class="card-svg-wrap">
+        <svg viewBox="0 0 72 72"><use href="#svg-sakura"/></svg>
+      </div>
+      <span class="card-name">Sakura</span>
+      <span class="card-count" id="count-sakura"></span>
+    </div>
+
+    <div class="flower-card" id="card-sun" onclick="addFlower('sun')">
+      <div class="card-glow"></div>
+      <div class="card-svg-wrap">
+        <svg viewBox="0 0 72 72"><use href="#svg-sun"/></svg>
+      </div>
+      <span class="card-name">Matahari</span>
+      <span class="card-count" id="count-sun"></span>
+    </div>
+
+    <div class="flower-card" id="card-tulip" onclick="addFlower('tulip')">
+      <div class="card-glow"></div>
+      <div class="card-svg-wrap">
+        <svg viewBox="0 0 72 72"><use href="#svg-tulip"/></svg>
+      </div>
+      <span class="card-name">Tulip</span>
+      <span class="card-count" id="count-tulip"></span>
+    </div>
+
+    <div class="flower-card" id="card-lavender" onclick="addFlower('lavender')">
+      <div class="card-glow"></div>
+      <div class="card-svg-wrap">
+        <svg viewBox="0 0 72 72"><use href="#svg-lavender"/></svg>
+      </div>
+      <span class="card-name">Lavender</span>
+      <span class="card-count" id="count-lavender"></span>
+    </div>
+
+    <div class="flower-card" id="card-daisy" onclick="addFlower('daisy')">
+      <div class="card-glow"></div>
+      <div class="card-svg-wrap">
+        <svg viewBox="0 0 72 72"><use href="#svg-daisy"/></svg>
+      </div>
+      <span class="card-name">Daisy</span>
+      <span class="card-count" id="count-daisy"></span>
+    </div>
+
+    <div class="flower-card" id="card-hibiscus" onclick="addFlower('hibiscus')">
+      <div class="card-glow"></div>
+      <div class="card-svg-wrap">
+        <svg viewBox="0 0 72 72"><use href="#svg-hibiscus"/></svg>
+      </div>
+      <span class="card-name">Hibiscus</span>
+      <span class="card-count" id="count-hibiscus"></span>
+    </div>
+
+    <div class="flower-card" id="card-lotus" onclick="addFlower('lotus')">
+      <div class="card-glow"></div>
+      <div class="card-svg-wrap">
+        <svg viewBox="0 0 72 72"><use href="#svg-lotus"/></svg>
+      </div>
+      <span class="card-name">Lotus</span>
+      <span class="card-count" id="count-lotus"></span>
+    </div>
+
+  </div>
+
+  <!-- ── Bouquet canvas ── -->
+  <div class="bouquet-canvas-wrap reveal">
+    <p class="bouquet-label">✨ Buket kamu · klik bunga untuk menghapus</p>
+    <div class="bouquet-canvas" id="bouquet-canvas">
+      <div class="bouquet-empty">
+        <svg width="60" height="60" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="28" fill="none" stroke="rgba(244,167,181,0.3)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <text x="30" y="38" text-anchor="middle" font-size="22">💐</text>
+        </svg>
+        <p>Buket kamu akan muncul di sini</p>
+      </div>
+    </div>
+    <div class="bouquet-counter" id="bouquet-counter">0</div>
+  </div>
+
+  <!-- ── Actions ── -->
+  <div class="bouquet-actions reveal">
+    <button class="send-btn"  onclick="sendBouquet()">💌 buket nya di terima</button>
+    <button class="clear-btn" onclick="clearBouquet()">✕ ganti ahh</button>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+     ══════════════════════════════════ -->
+<footer>
+  <p>Dibuat oleh raja oleng <span>❤️</span> khusus untuk yuuu</p>
+  <p style="font-size:0.9rem;margin-top:0.5rem;opacity:0.7;">Setiap bunga mewakili cintaku yang tak terhingga asekkkkk</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
